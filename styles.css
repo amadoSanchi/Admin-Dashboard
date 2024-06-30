@@ -1,0 +1,258 @@
+
+:root {
+    --yellow: #ffc900;
+    --red: #f0141e;
+}
+
+@font-face {
+    font-family: "titillium";
+    src: url("webfonts/titillium-regular-webfont.woff2") format("woff2");
+}
+
+body {
+    color: white;
+    display: grid;
+    font-family: titillium, Roboto, sans-serif;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 150px 1fr;
+    height: 100vh;
+}
+
+/* || BLOCKS */
+
+header {
+    background-color: #151515;
+    display: grid;
+    grid-column: 2 / -1;
+    grid-template-columns: 4fr 3fr;
+    grid-template-rows: 60px 75px;
+    padding: 0 2rem;
+}
+
+#sidebar {
+    background-color: #000;
+    grid-row: 1 / -1;
+}
+
+#sidebar-content {
+    align-content: start;
+    background-color: #000;
+    display: grid;
+    font-weight: 600;
+    gap: 25px;
+    padding: 0.5rem;
+    position: sticky;
+    top: 0;
+}
+
+main {
+    background-color: #1f1f1f;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 300px;
+    grid-template-rows: repeat(2, 1fr);
+    padding: 2rem;
+}
+
+#main__projects {
+    grid-row: 1 / -1;
+}
+
+#main__announcements {
+    font-size: 0.9rem;
+    grid-row: 1 / 2;
+}
+
+#main__trending {
+    grid-row: 2 / 3;
+}
+
+/* || MODIFIERS */
+
+svg {
+    fill: white;
+    width: 20px;
+}
+
+h2, h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+main h2 {
+    margin-bottom: 0.5rem;
+}
+
+/* || ELEMENTS */
+
+/* || sidebar */
+
+#sidebar-content div {
+    display: flex;
+    padding: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+#sidebar-content > div:first-child span {
+    font-size: 1.75rem;
+}
+
+#sidebar-content section:first-of-type div:first-child {
+    background-color: var(--red);
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+#sidebar-content svg {
+    margin-right: 0.5rem;
+}
+
+#sidebar-content > div:first-child svg {
+    width: 2.5rem;
+}
+
+/* || main__announcements */
+
+#main__announcements div {
+    background-color: #2e2e2e;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.25);
+    padding: 2rem;
+}
+
+#main__announcements h3 {
+    font-size: 0.95rem;
+}
+
+#main__announcements hr {
+    border-color: #f3f4f6;
+    margin: 1.5rem 0;
+}
+
+/* || main__projects */
+
+#main__projects .card {
+    background-color: #2e2e2e;
+    border-left: 7.5px solid var(--yellow);
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.25);
+    padding: 1rem;
+}
+
+#main__projects .card h3 {
+    background-color: var(--yellow);
+    color: black;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+#main__projects .card svg {
+    fill: var(--yellow);
+}
+
+#cards {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.card__icons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: end;
+    margin-top: 40px;
+}
+
+/* || main__trending */
+
+#main__trending img {
+    border-radius: 100%;
+}
+
+#main__trending div {
+    background-color: #2e2e2e;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgb(0, 0, 0, 0.25);
+    display: grid;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+#main__trending figure {
+    display: flex;
+    gap: 1rem;
+}
+
+#main__trending figcaption {
+    display: flex;
+    flex-direction: column;
+}
+
+#main__trending figcaption span:first-child {
+    font-weight: 600;
+}
+
+/* || header */
+
+#searcher {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+}
+
+#searcher input {
+    background-color: #2e2e2e;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    height: 1.75rem;
+    padding-left: 0.5rem;
+    width: 100%;
+}
+
+#profile-welcoming figure {
+    display: flex;
+    font-size: 1.25rem;
+    font-weight: bold;
+    gap: 1rem;
+}
+
+#profile-welcoming img {
+    border-radius: 100%;
+}
+
+#profile-welcoming figcaption {
+    margin: auto 0;
+}
+
+#profile-welcoming figure span:first-of-type {
+    display: flex;
+    font-size: 0.75rem;
+}
+
+#profile-options, #profile-options figure {
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+    gap: 1rem;
+    justify-content: end;
+}
+
+#profile-options img {
+    border-radius: 100%;
+}
+
+#buttons {
+    align-items: center;
+    display: flex;
+    gap: 2rem;
+    justify-content: end;
+}
+
+#buttons button {
+    background-color: var(--red);
+    border-radius: 25px;
+    border: none;
+    color: white;
+    padding: 0.25rem 1.5rem;
+}
